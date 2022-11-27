@@ -29,9 +29,9 @@ public class BookingTesting {
 	@Order(1)
 	public void testCreateBooking() {
 		Booking bk = new Booking();
-		bk.setId(7);
+		bk.setId(9);
 		bk.setBikename("Honda");
-		bk.setBikenum("KA-11 HU 9233");
+		bk.setBikenum("KA-11 HU 9209");
 		bk.setFromdate("2022-11-03");
 		bk.setTodate("2022-11-04");
 		bk.setUname("Priya");
@@ -63,18 +63,18 @@ public class BookingTesting {
 	@Test
 	@Order(4)
 	public void testUpdate() {
-		Booking bk = repo.findById(1).get();
-		bk.setBikename("Hero");
+		Booking bk = repo.findById(7).get();
+		bk.setBikename("Honda");
 		repo.save(bk);
-		assertNotEquals("Honda", repo.findById(1).get().getBikename());
+		assertNotEquals("Hero", repo.findById(7).get().getBikename());
 	}
 
 	@Test
 
 	@Order(5)
 	public void testDelete() {
-		repo.deleteById(5);
-		assertThat(repo.existsById(5)).isFalse();
+		repo.deleteById(8);
+		assertThat(repo.existsById(8)).isFalse();
 	}
 
 }

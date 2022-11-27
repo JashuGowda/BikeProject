@@ -10,7 +10,7 @@ import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import org.mockito.Mock;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.bikerent.dao.FeedbackRepository;
@@ -20,17 +20,17 @@ import com.bikerent.entities.Feedback;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class FeedbackTesting {
 
-	@Mock
+	@Autowired
 	public FeedbackRepository prepo;
 
 	@Test
 	@Order(1)
 	public void testCreatefeedback() {
 		Feedback fb = new Feedback();
-		fb.setId(2);
+		fb.setId(4);
 		fb.setName("priya");
 		fb.setBikeName("Tvs");
-		fb.setBikeNum("KA-11 KU 7643");
+		fb.setBikeNum("KA-11 KU 7043");
 		fb.setRatings(5);
 		fb.setReviews("Good");
 		prepo.save(fb);
@@ -49,8 +49,8 @@ public class FeedbackTesting {
 	@Test
 	@Order(3)
 	public void getfeedback() {
-		Feedback fb = prepo.findById(1).get();
-		assertEquals("sushma", fb.getName());
+		Feedback fb = prepo.findById(2).get();
+		assertEquals("Jashu", fb.getName());
 
 	}
 

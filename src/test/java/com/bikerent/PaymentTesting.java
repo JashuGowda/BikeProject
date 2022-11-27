@@ -10,7 +10,7 @@ import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import org.mockito.Mock;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.bikerent.dao.PaymentRepository;
@@ -20,23 +20,23 @@ import com.bikerent.entities.Payment;
 @SpringBootTest
 class PaymentTesting {
 
-	@Mock
+	@Autowired
 	PaymentRepository prepo;
 
 	@Test
 	@Order(1)
 	public void testCreate() {
 		Payment p = new Payment();
-		p.setId(2);
-		p.setCardno("3045-8987-5464");
+		p.setId(14);
+		p.setCardno("3045-1987-5342");
 		p.setNameoncard("karthik");
-		p.setAmount(1000);
+		p.setAmount(500);
 		p.setCvv(879);
 		p.setPaymentmethod("debitcard");
 		p.setExmonth(7);
-		p.setExyear(2026);
+		p.setExyear(2024);
 		prepo.save(p);
-		assertNotNull(prepo.findById(2).get());
+		assertNotNull(prepo.findById(14).get());
 
 	}
 

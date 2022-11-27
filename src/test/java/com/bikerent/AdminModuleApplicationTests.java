@@ -31,15 +31,15 @@ class AdminModuleApplicationTests {
 	@Order(1)
 	public void testCreate() {
 		Bike bike=new Bike();
-		bike.setId(12);
+		bike.setId(14);
 		bike.setBikename("Hero");
-		bike.setBikenum("KA-13 JU 0956");
+		bike.setBikenum("KA-13 LU 0922");
 		bike.setBikevar("Splender");
-		bike.setModelyear(2019);
+		bike.setModelyear(2020);
 		bike.setPrice(600);
 		bike.setStatus("Available");
 		br.save(bike);
-		assertNotNull(br.findById(12).get());
+		assertNotNull(br.findById(14).get());
 	}
 	@Test
 	@Order(2)
@@ -50,22 +50,22 @@ class AdminModuleApplicationTests {
 	@Test
 	@Order(3)
 	public void getSinglebike() {
-		Bike bike=br.findById(11).get();
-		assertEquals(600,bike.getPrice());
+		Bike bike=br.findById(7).get();
+		assertEquals(800,bike.getPrice());
 	}
 	@Test
 	@Order(4)
 	public void testUpdate() {
 	Bike bike=br.findById(8).get();
-	bike.setPrice(800);
+	bike.setPrice(600);
 	br.save(bike);
-	assertNotEquals(600, br.findById(8).get().getPrice());
+	assertNotEquals(800, br.findById(8).get().getPrice());
 	}
 	@Test
 	@Order(5)
 	public void testDelete() {
-		br.deleteById(14);
-		assertThat(br.existsById(14)).isFalse();
+		br.deleteById(13);
+		assertThat(br.existsById(13)).isFalse();
 	}
 	
 	

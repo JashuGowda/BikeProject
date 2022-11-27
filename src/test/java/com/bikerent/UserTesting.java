@@ -26,13 +26,13 @@ public class UserTesting {
 	@Order(1)
 	public void SavaData() {
 		UserLogin user = new UserLogin();
-		user.setId(8);
-		user.setName("ashu");
-		user.setGmail("as@gmail.com");
-		user.setPassword("sara1234");
-		user.setPnumber("98989898789");
+		user.setId(11);
+		user.setName("gopi");
+		user.setGmail("gopi@gmail.com");
+		user.setPassword("gopi123");
+		user.setPnumber("9898929889");
 		dao.save(user);
-		assertNotNull(dao.findById(1));
+		assertNotNull(dao.findById(11));
 	}
 
 	@Test
