@@ -64,9 +64,9 @@ public class BookingTesting {
 	@Order(4)
 	public void testUpdate() {
 		Booking bk = repo.findById(7).get();
-		bk.setBikename("Honda");
+		bk.setBikename("Hero");
 		repo.save(bk);
-		assertNotEquals("Hero", repo.findById(7).get().getBikename());
+		assertNotEquals("Honda", repo.findById(7).get().getBikename());
 	}
 
 	@Test
